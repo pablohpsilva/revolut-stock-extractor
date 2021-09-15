@@ -24,23 +24,37 @@ You can upload this data elsewhere into other apps if you wish.
   {
     "ticker": "XOM",
     "action": "Buy",
-    "sharesBought": "1",
-    "moneySpent": -55.63,
+    "sharesAmount": "1",
+    "moneyUsed": -55.63,
     "date": "2001-09-13T14:30:00.000Z"
   },
   {
-    "ticker": "none",
-    "action": "One-off",
-    "sharesBought": -1,
-    "moneySpent": 334.3,
-    "date": "2001-09-13T11:42:00.000Z"
+    "ticker": "XOM",
+    "action": "Sell",
+    "sharesAmount": "37",
+    "moneyUsed": 2150.09,
+    "date": "2021-07-30T13:45:00.000Z"
   },
   {
     "ticker": "XOM",
     "action": "Dividend",
-    "sharesBought": -1,
-    "moneySpent": 28.1,
+    "sharesAmount": -1,
+    "moneyUsed": 28.1,
     "date": "2001-09-13T04:36:00.000Z"
+  },
+  {
+    "ticker": "none",
+    "action": "One-off",
+    "sharesAmount": -1,
+    "moneyUsed": 334.3,
+    "date": "2001-09-13T11:42:00.000Z"
+  },
+  {
+    "ticker": "none",
+    "action": "Custody",
+    "sharesAmount": -1,
+    "moneyUsed": -4.14,
+    "date": "2021-09-01T08:44:00.000Z"
   },
   ...
 ]
