@@ -92,15 +92,15 @@ const compileEntries = () => {
   const data = stockEntries.reduce((acc, curr) => {
     const ticker = extractStockTicker(curr);
       const action =  extractStockAction(curr);
-      const sharesBought =  extractSharesBought(curr);
-      const moneySpent =  extractMoneySpent(curr);
+      const sharesAmount =  extractSharesBought(curr);
+      const moneyUsed =  extractMoneySpent(curr);
       const date =  extractDate(curr);
 
     return acc.concat({
       ticker,
       action,
-      sharesBought,
-      moneySpent,
+      sharesAmount,
+      moneyUsed,
       date,
     })
   }, []);
