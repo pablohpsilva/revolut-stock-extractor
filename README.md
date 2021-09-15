@@ -60,6 +60,13 @@ You can upload this data elsewhere into other apps if you wish.
 ]
 ```
 
+## Can I use this forever?
+
+I highly don't encourage it. Soon the script will be smart enough to know from where to pick it from. But that's not the point.
+Use this script only to collect ou data as a backup. 
+
+**PLEASE READ THE `KNOWN BUGS` PART OF THIS DOCUMENTATION.**
+
 ## Known bugs
 
 Since Revolut doesn't provide the year of the Puchase/Sell/Dividend, all years are extracted with `2001` year. The upside is the fact that we have the correct day and time.
