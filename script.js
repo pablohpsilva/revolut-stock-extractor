@@ -57,8 +57,8 @@ const extractStockTicker = (rootElement) => {
 
 const extractStockAction = (rootElement) => {
   const text = rootElement.querySelector('[data-testid="TransactionsItem-title"]').textContent;
-  if (!text.includes(' ')) return text;
-  return text.split(' ')?.[0];
+  if (!text.includes(' ')) return text?.toLowerCase();
+  return text.split(' ')?.[0]?.toLowerCase();
 }
 
 const extractSharesBought = (rootElement) => {
@@ -90,19 +90,24 @@ const compileEntries = () => {
   const stockEntries = Array.from(document.querySelectorAll('[data-testid="TransactionsItem-root"]'));
 
   const data = stockEntries.reduce((acc, curr) => {
-    const ticker = extractStockTicker(curr);
+    const symbol = extractStockTicker(curr);
       const action =  extractStockAction(curr);
-      const sharesAmount =  extractSharesBought(curr);
-      const moneyUsed =  extractMoneySpent(curr);
+      const tax =  action === 'dividend' ? 15 : 0;
+      const quantity =  extractSharesBought(curr);
+      const moneySpent =  extractMoneySpent(curr);
       const date =  extractDate(curr);
 
-    return acc.concat({
-      ticker,
+      const payload = {
+      symbol,
       action,
-      sharesAmount,
-      moneyUsed,
+      quantity,
+      tax,
       date,
-    })
+    }
+
+    // const result = quantity === -1 ? {...payload, }
+
+    return acc.concat({...payload, moneySpent})
   }, []);
   
   const text = JSON.stringify(data);
